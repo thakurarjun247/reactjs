@@ -1,4 +1,5 @@
-import React from 'react';
+//import { computeHeadingLevel } from '@testing-library/react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom/client';
 //learing resource: google doc https://docs.google.com/document/d/14NAFzsZRL30E3SYTtU_zOiEsWLVWqaic42n20vGSvlI/edit
 //These lines import the necessary modules from the 'react' 
@@ -11,17 +12,20 @@ const elementSgn = <h1>SGN SGN SGNSGN SGN SGNSGN SGN SGNSGN SGN SGNSGN SGN SGNSG
 
 // Modern approach to rendering using ReactDOM.createRoot
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(elementSgn);
+//root.render(elementSgn);
 
 const readFromVariableOfJavascript=10;
 //using jsx
-const elementOL=<ol>
+const elementOL=<div>
+  <h1>Task List</h1>
+  <ol>
   <li>hi</li>
   <li>hello</li>
   <li>{readFromVariableOfJavascript}</li>
   </ol>
+</div>
 
-root.render(elementOL)
+//root.render(elementOL)
 
 
 
@@ -31,4 +35,34 @@ const oldstyleelement = React.createElement('div', { className: 'container' },
   React.createElement('p', null, 'This is a paragraph.')
 );
 
-root.render(oldstyleelement)
+//root.render(oldstyleelement)
+
+
+
+//creating and using components
+class ListComponent extends Component{
+render(){
+  return (  <ol>
+    <li>hi</li>
+    <li>hello</li>
+    <li>{readFromVariableOfJavascript}</li>
+    </ol>);
+}
+}
+
+class H1Component extends Component{
+  render(){
+    return ( <h1>Task List</h1>);
+  }
+  }
+
+class MainComponent extends Component{
+  render(){
+    return <div>
+      <ListComponent/>
+      <H1Component/>
+    </div>
+  }
+}
+
+root.render(<MainComponent />);
