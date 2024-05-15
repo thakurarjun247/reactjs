@@ -22,6 +22,6 @@ git commit -m "$commitMessage"
 
 echo "\ngit push..."  # Removed -e
 git push
-echo "\n"
+
 echo "Finished!"
-echo "\n"
+
