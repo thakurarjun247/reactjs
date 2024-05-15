@@ -14,7 +14,7 @@ const elementSgn = <h1>SGN SGN SGNSGN SGN SGNSGN SGN SGNSGN SGN SGNSGN SGN SGNSG
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(elementSgn);
 
-const readFromVariableOfJavascript=10;
+const readFromVariableOfJavascript=9999999999;
 //using jsx
 const elementOL=<div>
   <h1>Task List</h1>
@@ -25,7 +25,7 @@ const elementOL=<div>
   </ol>
 </div>
 
-//root.render(elementOL)
+root.render(elementOL)
 
 
 
@@ -35,32 +35,34 @@ const oldstyleelement = React.createElement('div', { className: 'container' },
   React.createElement('p', null, 'This is a paragraph.')
 );
 
-//root.render(oldstyleelement)
+root.render(oldstyleelement)
 
 
 
 //creating and using components
-class ListComponent extends Component{
+class FooterComponent extends Component{
 render(){
   return (  <ol>
-    <li>hi</li>
-    <li>hello</li>
-    <li>{readFromVariableOfJavascript}</li>
+   <li>this is footer section</li>
+    <li>name is arjun </li>
+    <li> mobile number is {readFromVariableOfJavascript}</li>
     </ol>);
 }
 }
 
-class H1Component extends Component{
+class HeaderComponent extends Component{
   render(){
-    return ( <h1>Task List</h1>);
+    return ( "Header component");
   }
   }
 
 class MainComponent extends Component{
   render(){
     return <div>
-      <ListComponent/>
-      <H1Component/>
+      
+      <HeaderComponent/>
+
+      <FooterComponent/>
     </div>
   }
 }
