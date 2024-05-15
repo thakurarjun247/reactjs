@@ -1,28 +1,27 @@
-
 #Now, you can run the script like this:
 
 # sh git.sh "Your commit message here"
 
-echo -e "\n\ngit pull..."
+echo "\ngit pull..."  # Removed -e
 git pull
 
 git add .
 
-echo -e "\n\ngit status..."
+echo "\ngit status..."  # Removed -e
 git status
 
 # Check if a commit message is provided as a command-line argument
 if [ -n "$1" ]; then
   commitMessage="$1"
 else
-  echo -e "\n\nEnter a commit message:"
+  echo "\nEnter a commit message:"
   read commitMessage
 fi
 
 git commit -m "$commitMessage"
 
-echo -e "\n\ngit push..."
+echo "\ngit push..."  # Removed -e
 git push
-
-echo -e "\n\n"
-
+echo "\n"
+echo "Finished!"
+echo "\n"
